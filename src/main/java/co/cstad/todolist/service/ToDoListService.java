@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface ToDoListService {
     List<ToDoList> displayList();
-    void createList();
-    void updateList();
-    void deleteList();
-    void searchList();
+    ToDoList getById(Integer id);
+    void createList(ToDoList newList);
+    void updateList(ToDoList updatedList);
+    void deleteList(Integer id);
+    List<ToDoList> searchList(String task, Boolean isDone);
 }

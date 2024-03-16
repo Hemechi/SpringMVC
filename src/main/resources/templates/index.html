@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Spring</title>
 </head>
 <body>
 <h1 style="text-align: center">ToDoList</h1>
+
+<!--To do list table-->
 <table border="1" style="margin: auto; width: 800px; height: 400px; text-align: center;
  border-collapse: collapse;">
     <thead>
@@ -21,9 +23,18 @@
     <tr th:each="todo : ${todolist}">
         <td style="background-color: pink" th:text="${todo.id}"></td>
         <td th:text="${todo.task}"></td>
-        <td th:text="${todo.desciption}"></td>
+        <td th:text="${todo.description}"></td>
         <td th:text="${todo.isDone}"></td>
         <td th:text="${todo.createdAt}"></td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr th:each="td : ${todo}">
+        <td style="background-color: pink" th:text="${td.id}"></td>
+        <td th:text="${td.task}"></td>
+        <td th:text="${td.description}"></td>
+        <td th:text="${td.isDone}"></td>
+        <td th:text="${td.createdAt}"></td>
     </tr>
     </tbody>
 </table>

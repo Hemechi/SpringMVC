@@ -19,22 +19,27 @@ public class ToDoListServiceImpl implements ToDoListService {
     }
 
     @Override
-    public void createList() {
-
+    public ToDoList getById(Integer id) {
+        return dataSource.getById(id);
     }
 
     @Override
-    public void updateList() {
-
+    public void createList(ToDoList newList) {
+        dataSource.createList(newList);
     }
 
     @Override
-    public void deleteList() {
-
+    public void updateList(ToDoList updatedList) {
+        dataSource.updateList(updatedList);
     }
 
     @Override
-    public void searchList() {
+    public void deleteList(Integer id) {
+        dataSource.deleteList(id);
+    }
 
+    @Override
+    public List<ToDoList> searchList(String task, Boolean isDone) {
+        return dataSource.searchList(task, isDone);
     }
 }
